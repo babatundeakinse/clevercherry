@@ -99,7 +99,7 @@ class Utils {
 
   public function getUserRole($type){
     $user_id = $_SESSION['current_user'];
-    $query = "select users.username,users.id,roles.name as name from users inner join user_roles on user_roles.user_id='$user_id' inner join roles on user_roles.role_id=roles.id";
+    $query = "select roles.name as name from users inner join user_roles on user_roles.user_id='$user_id' inner join roles on user_roles.role_id=roles.id";
     $result = $this->runQuery($query);
     $role_names = array();
 
